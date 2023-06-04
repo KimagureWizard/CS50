@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="row align-items-center">
+        <div class="col-3 mx-5">
+            <img class="img-fluid rounded-circle" src="/static/potato.png" alt="potato" id="profile_pic" style="border:solid grey 5px;">
+            <div style="margin-top: 20px">
+                <select name="change_pic" id="select_menu">
+                    <option value="">Potato</option>
+                    <option value="cat">Lion</option>
+                    <option value="hotdog">Dog</option>
+                </select>
+            </div>
+            <div style="margin-top: 20px">
+                <a href="/change_password">Change your password</a>
+            </div>
+        </div>
+        <div class="col">
+            <h2>Hello {{ name }}!</h2>
+            <p style="margin-top:20px">You Joined Since: {{ register_time }}</p>
+            <p style="margin-top:30px">Account Balance: ${{ money }}</p>
+            <form action="/profile" method="post" id="topup_form">
+                <div class="mb-3">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="topup" name="topup" placeholder="Add fund" type="number" min="0">
+                </div>
+                <button class="btn btn-primary" type="submit" id="topup_button">Confirm</button>
+            </form>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="overview">
+        <h1 style="font-size:24px; margin-bottom:20px">Your Account Overview</h1>
+        <tr>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Current Price Per Share</th>
+        </tr>
+        {% for item in new_overview_dict %}
+            <tr>
+                <td>{{ item }}</td>
+                <td>{{ new_overview_dict[item]["shares"] }}</td>
+                <td>{{ new_overview_dict[item]["current_price"] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

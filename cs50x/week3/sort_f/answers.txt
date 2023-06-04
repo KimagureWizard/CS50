@@ -1,0 +1,8 @@
+sort1 uses: Bubble
+How do you know?: Knowing sort 2 is merge, in randomlized and revered text, 3's runtime is better than 1, but in sorted text 1 is better, this indicates 1 should be bubble sort.
+
+sort2 uses: Merge
+How do you know?: For large amount of numbers which are reversed or randomlized, merge sort should have the best runtime.
+
+sort3 uses: Selection
+How do you know?: As the same reason for compaing sort 1 and 3, 3 shold be selection sort.

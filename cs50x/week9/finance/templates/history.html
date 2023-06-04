@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="overview">
+        <h1 style="font-size:24px; margin-bottom:20px">Your Buy History</h1>
+        <tr>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Buy Price</th>
+            <th>Buy Time</th>
+            <th>Total</th>
+        </tr>
+        {% for items in buy_overview_dict %}
+            <tr>
+                <td>{{ items.symbol }}</td>
+                <td>{{ items.shares }}</td>
+                <td>{{ items.buy_price }}</td>
+                <td>{{ items.buy_time }}</td>
+                <td>{{ items.shares*items.buy_price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <table class="overview">
+        <h1 style="font-size:24px; margin-bottom:20px; margin-top:50px">Your Sell History</h1>
+        <tr>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Sell Price</th>
+            <th>Sell Time</th>
+            <th>Total</th>
+        </tr>
+        {% for items in sell_overview_dict %}
+            <tr>
+                <td>{{ items.symbol }}</td>
+                <td>{{ items.shares }}</td>
+                <td>{{ items.sell_price }}</td>
+                <td>{{ items.sell_time }}</td>
+                <td>{{ items.shares*items.sell_price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
